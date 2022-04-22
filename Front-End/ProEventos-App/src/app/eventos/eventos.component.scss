@@ -1,0 +1,90 @@
+.cardimage{
+
+  min-width: 120%;
+  width: 20rem;
+
+
+}
+
+.teste{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 10rem;
+  background-color: black;
+
+}
+
+.cardLote{
+  margin: 0 1rem 0.5rem 0rem;
+  background: #7A63FF;
+  width: 4rem;
+  height: 1.2rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.cardLote p{
+  font-size: 12px;
+  margin: auto;
+  margin-left: 6px;
+  color: white;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  line-height: 15px;
+}
+
+.titulo{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+}
+
+.eventdate{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+  margin: 0;
+  margin-left: 0.5rem;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+.icon{
+  font-size: 0.8rem;
+}
+
+.eventlocal{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  margin: 0;
+  margin-left: 0.5rem;
+}
+
+.shadow2{
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.17);
+  transition: 300ms ease-in-out;
+
+}
+
+.shadow2:hover{
+  box-shadow: 0px 0px 0px rgb(255, 255, 255);
+  transition: 300ms ease-in-out;
+  cursor: pointer;
+}

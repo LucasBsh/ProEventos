@@ -8,8 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventosComponent implements OnInit {
 
-  public eventos:any;
+  public eventos:any =[];
+  public eventosFiltrados:any =[];
   constructor(private http: HttpClient) { }
+
+  private _filtroLista: string = '';
+
+  public get filtroLista(){
+    return this._filtroLista;
+  }
+
+  public set filtroLista(value : string){
+    this._filtroLista = value;
+    this.eventosFiltrados = this.filtroLista ? this.filtrarEventos(this.filtroLista) : this.eventos;
+  }
 
   ngOnInit(): void {
     this.getEventos();
@@ -17,17 +29,25 @@ export class EventosComponent implements OnInit {
 
   public getEventos(): void{
      this.http.get('https://localhost:44351/api/evento').subscribe(
-       response=> this.eventos = response,
+       response=> {
+        this.eventos = response
+        this.eventosFiltrados = this.eventos
+      },
        error => console.log(error)
      );
 
-    this.eventos = [
-    {
-      Tema: 'Angular',
-      Local: 'Belo Horizonte'
-    }
-  ]
   }
+
+  filtrarEventos(filtrarPor:string) : any{
+    filtrarPor = filtrarPor.toLocaleLowerCase();
+    return this.eventosFiltrados.filter(
+      (evento: any) => evento.tema.toLocaleLowerCase().indexOf(filtrarPor) !== -1
+      || evento.local.toLocaleLowerCase().indexOf(filtrarPor) !== -1
+
+    )
+  }
+
+
 
 
 

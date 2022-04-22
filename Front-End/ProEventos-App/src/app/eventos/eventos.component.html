@@ -1,7 +1,71 @@
-<p>eventos works!</p>
-<div *ngFor="let evento of eventos">
-  <p>Tema: {{evento.tema}}</p>
-  <p>Local: {{evento.local}}</p>
-  <hr>
-</div>
+<h2>Eventos</h2>
+<hr>
 
+<div action="" class="form-inline">
+  <div class="form-group mb-2 flex">
+    <label class="mr-2">Filter</label>
+    <input type="text" class="form-control mr-2" placeholder="buscar"
+    [(ngModel)]="filtroLista"
+    >
+  </div>
+</div>
+<!-- <table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>#</th>
+      <th>Imagem</th>
+      <th>Tema</th>
+      <th>Local</th>
+      <th>Data</th>
+      <th>Qtd Pessoas</th>
+      <th>Lote</th>
+      <th>Opções</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="eventos && eventos.length">
+    <tr *ngFor="let evento of eventos">
+      <td>{{evento.eventoId}}</td>
+      <td>{{evento.imagemURL}}</td>
+      <td>{{evento.tema}}</td>
+      <td>{{evento.local}}</td>
+      <td>{{evento.dataEvento}}</td>
+      <td>{{evento.lote}}</td>
+      <td>{{evento.qtdPessoas}}</td>
+      <td></td>
+    </tr>
+  </tbody>
+  <tfoot *ngIf="!eventos.length">
+    <tr>
+      <td colspan="8">
+        <h5>Nenhum evento adicionado!</h5>
+      </td>
+    </tr>
+  </tfoot>
+</table> -->
+<div class="row row-cols-1 row-cols-md-4 g-4" >
+  <div class="col" *ngFor="let evento of eventosFiltrados">
+    <div class="card h-100 shadow2">
+      <div class="teste">
+        <img class="cardimage" src="/assets/images/eventos/{{evento.imagemURL}}"   alt="...">
+      </div>
+      <div class="card-body">
+        <div class="cardLote">
+          <p>{{evento.lote}}º Lote</p>
+        </div>
+        <div class="card-title">
+          <h5 class=" titulo">{{evento.tema}}</h5>
+        </div>
+        <div class="card-text">
+          <div class="flex">
+            <i class="fa-regular fa-calendar icon" ></i>
+            <p class="eventdate" >{{evento.dataEvento}}</p>
+          </div>
+          <div class="flex" style="margin-top: 0.5rem;">
+          <i class="fa fa-map-marker-alt"></i>
+          <p class="eventlocal">{{evento.local}}</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
