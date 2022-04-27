@@ -1,13 +1,14 @@
-<h2>Eventos</h2>
-<hr>
+<app-titulo [titulo]="'Eventos'"></app-titulo>
 
-<div action="" class="form-inline">
-  <div class="form-group mb-2 flex">
-    <label class="mr-2">Filter</label>
-    <input type="text" class="form-control mr-2" placeholder="buscar"
-    [(ngModel)]="filtroLista"
-    >
-  </div>
+<div  style="margin-bottom: 5px;">
+  <div action="" class="form-inline">
+    <div class="form-group mb-2 flex">
+      <label style="margin-right:5px;">Filter</label>
+      <input type="text" class="form-control mr-2" placeholder="buscar"
+      [(ngModel)]="filtroLista"
+      >
+    </div>
+  </div >
 </div>
 <!-- <table class="table table-striped">
   <thead class="table-dark">
@@ -42,7 +43,8 @@
     </tr>
   </tfoot>
 </table> -->
-<div class="row row-cols-1 row-cols-md-4 g-4" >
+<!-- <div class="row row-cols-1 row-cols-md-4 g-4"  (click)="openModal(template)"> -->
+  <div class="row row-cols-1 row-cols-md-4 g-4"  (click)="abrirModalCard()">
   <div class="col" *ngFor="let evento of eventosFiltrados">
     <div class="card h-100 shadow2">
       <div class="teste">
@@ -50,7 +52,7 @@
       </div>
       <div class="card-body">
         <div class="cardLote">
-          <p>{{evento.lote}}º Lote</p>
+          <p>{{evento.lotes}}º Lote</p>
         </div>
         <div class="card-title">
           <h5 class=" titulo">{{evento.tema}}</h5>
@@ -58,7 +60,7 @@
         <div class="card-text">
           <div class="flex">
             <i class="fa-regular fa-calendar icon" ></i>
-            <p class="eventdate" >{{evento.dataEvento}}</p>
+            <p class="eventdate" >{{evento.dataEvento | DataTimeFormat}}</p>
           </div>
           <div class="flex" style="margin-top: 0.5rem;">
           <i class="fa fa-map-marker-alt"></i>
@@ -69,3 +71,34 @@
     </div>
   </div>
 </div>
+
+<div *ngIf="abrirCard" class="modalbackground">
+  <div class="modalcontent">
+    <div class="imagemModal">
+        <i class="fa fa-close closemodal" (click)="fecharModalCard()"></i>
+      <img src="../../assets/images/eventos/blizzcon.jpg" alt="">
+    </div>
+    <div class="deletarEvento" (click)="openModal(template)">
+      <h5>Deletar evento</h5>
+    </div>
+  </div>
+</div>
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Do you want to confirm?</p>
+    <button type="button" class="btn btn-default" (click)="confirm();fecharModalCard()" >Yes</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+  </div>
+</ng-template>
+<!-- modal de excluir -->
+<!-- <button type="button" class="btn btn-primary" (click)="openModal(template)">Open modal</button>
+<br><br>
+<pre class="card card-block card-header">{{message}}</pre>
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Do you want to confirm?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+  </div>
+</ng-template> -->
