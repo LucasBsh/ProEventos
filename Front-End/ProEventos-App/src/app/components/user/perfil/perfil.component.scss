@@ -1,0 +1,72 @@
+.row-input{
+  display: flex;
+  align-items: center;
+}
+.d-flex2{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+input{
+width: 100%;
+}
+
+.d-flex3{
+  display: flex;
+  justify-content: flex-end;
+}
+
+h3,p{
+  font-family: 'Poppins';
+}
+
+.icone{
+  background-color: blueviolet;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-flex4{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+i{
+color: white;
+font-size: 1.5rem;
+}
+
+.row2{
+  display: flex;
+}
+
+img{
+  width: 10rem;
+}
+
+.circle{
+  width: 10rem;
+  height: 10rem;
+  margin-top: 20px;
+}
+
+.p{
+  font-size: 10pt;
+}
+
+.h6-2{
+  font-size: 11pt;
+
+}
+
+.h5-2{
+  font-weight: 700;
+}

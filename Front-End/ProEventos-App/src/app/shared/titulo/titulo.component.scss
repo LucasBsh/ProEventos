@@ -1,0 +1,27 @@
+.box-title{
+  background-color: #FFFFFF;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  max-height: 10rem;
+  display: flex;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.box h2{
+  margin-left: 2rem;
+  font-size: 40px;
+  margin-top: 2rem;
+  font-family: 'poppins';
+  color:rgb(37, 37, 37);
+}
+
+img{
+  max-height: 10rem;
+  margin-left: 1rem;
+}

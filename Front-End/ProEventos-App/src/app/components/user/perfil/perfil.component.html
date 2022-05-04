@@ -1,0 +1,126 @@
+<app-titulo [titulo]="'Perfil'"  [imagem]="'perfilTitle.svg'"></app-titulo>
+
+<div class="card rounded shadow-sm p-3">
+<form>
+    <div class="row p-3">
+		<div class="col-lg-3 pt-1">
+			<div class="card mb-3">
+				<div class="card-header2"></div>
+				<div class="d-flex align-self-center pt-3">
+					<a>
+            <div  class="rounded-circle overflow-hidden circle">
+						<img
+						src="../../../../assets/images/perfil/perfil.jpg"
+						name="aboutme" >
+            </div>
+          </a>
+				</div>
+				<div class="card-body">
+					<div class="h4 text-center mb-3">@UserName</div>
+					<div class="p">
+						Developer of web applications, JavaScript, PHP, Java, Python, Ruby, Java, Node.js,
+						etc.
+					</div>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">
+						<div class="row2">
+							<div class="d-flex4 text-center">
+								<div class="h5-2">1342</div>
+								<div class="h6-2 text-muted">Eventos Ministrados</div>
+							</div>
+							<div class="d-flex4 text-center">
+								<div class="h5-2">1342</div>
+								<div class="h6-2 text-muted">Eventos Participados</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="card-footer2"></div>
+			</div>
+		</div>
+		<div class="col-lg-9">
+			<div class="form-row">
+				<div class="form-group col-12">
+					<h3 class="border-bottom">Detalhe Perfil</h3>
+				</div>
+      <div class="row-input">
+				<div class="d-flex2">
+					<label class="label">Título</label>
+					<select class="select">
+						<option value=""></option>
+						<option value="0">Não Quero</option>
+						<option value="Senhorita">Tecnólogo(a)</option>
+						<option value="Senhorita">Bacharel</option>
+						<option value="Senhorita">Especialista</option>
+						<option value="Senhorita">Pós Graduado(a)</option>
+						<option value="Senhorita">Mestre</option>
+						<option value="Senhorita">Doutor(a)</option>
+						<option value="Senhorita">Pós Doc</option>
+					</select>
+				</div>
+				<div class="d-flex2" style="margin-left: 1rem;">
+					<label class="label">Primeiro Nome</label>
+					<input type="text" class="input"/>
+
+				</div>
+				<div class="d-flex2" style="margin-left: 1rem;">
+					<label class="label ">Último nome</label>
+					<input type="text" class="input"/>
+
+				</div>
+      </div>
+			</div>
+			<div class="form-row">
+        <div class="d-flex">
+				<div class="d-flex2">
+					<label class="label">E-mail</label>
+					<input type="text" class="input" />
+				</div>
+				<div class="d-flex2" style="margin-left: 1rem;">
+					<label class="label">Telefone</label>
+					<input type="text" class="input" />
+				</div>
+				<div class="d-flex2" style="margin-left: 1rem;">
+					<label class="label" >Função</label>
+					<select class="select">
+						<option value=""></option>
+						<option value="Participante">Participante</option>
+						<option value="Palestrante">Palestrante</option>
+					</select>
+				</div>
+      </div>
+				<form-group class="d-flex2" >
+					<label class="label">Descrição</label>
+					<input type="text" class="input" />
+				</form-group>
+			</div>
+			<div style="margin-top: 1rem;">
+				<h3 class="pt-3 border-bottom">Mudar Senha</h3>
+				<p>Caso mude de senha, preencha os campos abaixo:</p>
+			</div>
+			<div class="form-row ">
+				<div class="form-group col-sm">
+					<label class="label">Senha</label>
+					<input type="password" class="input" />
+				</div>
+				<div class="form-group col-sm">
+					<label class="label">Confirmar Senha</label>
+					<input type="password" class="input" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="">
+		<div class="d-flex3">
+			<button class="button-danger mr-auto border rounded" style="margin-right: 1rem;">
+				Cancelar Alteração
+			</button>
+			<button class="btn button-success">
+				<span class="spinner-border spinner-border-sm mr-1"></span>
+				Salvar Alteração
+			</button>
+		</div>
+	</div>
+</form>
+</div>

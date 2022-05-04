@@ -1,0 +1,110 @@
+<div class="modalbackground">
+  <div class="modalcontent" *ngIf="detalhesEvento">
+    <div class="imagemModal">
+      <i class="fa fa-close closemodal" (click)="fecharModalCard()"></i>
+      <img src="/assets/images/eventos/{{evento?.imagemURL}}" alt="">
+    </div>
+    <div class="main">
+      <div class="descricao">
+        <div class="tema">
+          <h1>{{evento?.tema}}</h1>
+        </div>
+        <div class="flex">
+          <div class="">
+            <div class="flex">
+              <i class="fa-regular fa-calendar icon"></i>
+              <p>{{evento?.local}}</p>
+            </div>
+            <div class="flex">
+              <i class="fa fa-map-marker-alt"></i>
+              <p>{{evento?.dataEvento | DataTimeFormat}}</p>
+            </div>
+          </div>
+          <div style="margin-left: 1rem;">
+            <div class="cardLote">
+              <p>{{evento?.lotes}}º Lote</p>
+              <p>{{evento?.qtdPessoas}}</p>
+            </div>
+          </div>
+          <div style="margin-left: 1rem;">
+            <div class="">
+              <p>Valor do Ingresso: </p>
+              <p>Ingressos Restantes: </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="palestrantes">
+        <h1>Palestrantes</h1>
+        <div *ngFor="let palestrante of evento?.palestrantesEventos">
+          <div class="palestrantes-foto">
+            <img src="/assets/images/palestrantes/{{palestrante.imagemURL}}" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <a href="" class="button-success rounded shadow-sm">
+          <i class="fa fa-ticket"></i>
+          Comprar Ingresso
+        </a>
+        <a href="" class="button-danger rounded shadow-sm ">
+          <i class="fa fa-trash"></i>
+          Excluir Evento
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="modalcontent2" *ngIf="!detalhesEvento">
+    <i class="fa fa-close closemodal" style="color: black;" (click)="fecharModalCard()"></i>
+    <h1 class="titulo">Adicionar Evento</h1>
+    <form>
+      <div class="p-3">
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label>Tema</label>
+            <input type="text" class="form-control" placeholder="Insira o Tema">
+          </div>
+        </div>
+        <div class="form-row d-flex5">
+          <div class="input-flex "  style="margin-right: 1rem;">
+            <label>Local</label>
+            <input type="text" class="form-control" placeholder="">
+          </div>
+          <div class="input-flex " >
+            <label>Data e Hora</label>
+            <input type="datetime" class="form-control" placeholder="">
+          </div>
+          <div class="form-group col-md-2" style="margin-left: 1rem;">
+            <label>Qtd Pessoas</label>
+            <input type="text" class="form-control " placeholder="">
+          </div>
+        </div>
+        <div class="form-row d-flex5">
+          <div class="input-flex" style="margin-right: 1rem;">
+            <label>Telefone</label>
+            <input type="text" class="form-control" placeholder="(000) 90000-0000">
+          </div>
+          <div class="input-flex">
+            <label>Email</label>
+            <input type="text" class="form-control" placeholder="e-mail">
+          </div>
+        </div>
+      </div>
+      <div class="card-footer2">
+        <div class="buttons">
+          <button class="button-danger rounded "  (click)="fecharModalCard()" >
+            Cancelar Alteração
+          </button>
+          <button class="button-success rounded " style="margin-left: 1rem;">
+            <span class="spinner-border spinner-border-sm mr-1"></span>
+            Salvar Evento
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+

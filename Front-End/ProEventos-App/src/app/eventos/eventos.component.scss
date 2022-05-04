@@ -149,3 +149,48 @@
   height: 3rem;
   cursor: pointer;
 }
+
+.eventos-wrapper{
+  background-color: #ffffff;
+  padding: 1.5rem;
+}
+.button{
+  text-decoration: none;
+  width: 6rem;
+  height: 2.2rem;
+  background-color: #7A63FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 10pt;
+  font-family: 'Poppins';
+  padding: 15px;
+  margin-left: 1rem;
+
+  i{
+   font-weight: 600;
+   margin-right:3px;
+  }
+}
+
+
+.fixed{
+  position: absolute;
+  top: 0;
+  right: 0;
+    width: 100vw;
+    height: 100vh;
+  z-index: 1;
+
+
+}
+
+.fixedtwo{
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.219);
+  width:100vw;
+  height: 100vh;
+  z-index: 1;
+
+}

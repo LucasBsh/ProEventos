@@ -25,10 +25,14 @@ import { PinkToast } from 'src/assets/toastr/pToastr';
 
 import { ContatosComponent} from './components/contatos/contatos.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { PerfilComponent } from './components/perfil/perfil.component';
 import { PalestrantesComponent } from './components/palestrantes/palestrantes.component';
 import { TituloComponent } from './shared/titulo/titulo.component';
 import { EventosComponent } from './eventos/eventos.component';
+import { ModalComponent } from './eventos/modal/modal.component';
+import { LoginComponent } from './components/user/login/login.component';
+import { RegistrationComponent } from './components/user/registration/registration.component';
+import { UserComponent } from './components/user/user.component';
+import { PerfilComponent } from './components/user/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,11 @@ import { EventosComponent } from './eventos/eventos.component';
     ContatosComponent,
     DashboardComponent,
     PerfilComponent,
-    TituloComponent
+    TituloComponent,
+    ModalComponent,
+    UserComponent,
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,

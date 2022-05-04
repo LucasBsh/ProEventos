@@ -14,8 +14,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&family=Roboto:wght@400;500;700;900&display=swap');
 @import '~ngx-toastr/toastr.css';
 @import '~ngx-spinner/animations/ball-clip-rotate-pulse.css';
+@import '../node_modules//bootswatch/dist/minty/bootstrap.min.css';
 
+*{
+  font-family: 'Poppins';
+}
 
+.bg{
+  background-color: #ececec;
+}
 
 .ngx-toastr {
   height: 70px; // Specify toastr-dialog width for all devices
@@ -49,3 +56,130 @@
   text-decoration: none;
 }
 
+input,select{
+  font-family: 'Poppins';
+  font-size: 13px;
+}
+
+input:focus,select:focus{
+  border: 1px solid #7B6CD3;
+  transition: 0.3ms ease-in-out;
+  outline: none;
+}
+
+.input{
+  height: 35px;
+  background: #FFFFFF;
+  border: 1px solid #E4E4E4;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.input::placeholder{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #BDBDBD;
+
+}
+
+.label{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.flex{
+  display: flex;
+  align-items:center;
+}
+
+// ----------------------------------------------BUTTONS--------------------------------------------------------------------
+
+.button-success{
+  text-decoration: none;
+  width: 12rem;
+  height: 2.2rem;
+  background-color: #51a351d2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 10pt;
+  font-family: 'Poppins';
+  padding: 15px;
+
+  i{
+    font-weight: 600;
+    margin-right:5px;
+  }
+
+  span{
+    font-weight: 600;
+    margin-right:8px;
+  }
+
+
+}
+
+
+.button-danger{
+  text-decoration: none;
+  width: 12rem;
+  height: 2.2rem;
+  background-color: #fa293ad2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 10pt;
+  font-family: 'Poppins';
+  padding: 15px;
+
+  i{
+    font-weight: 600;
+    margin-right:5px;
+  }
+}
+
+.button{
+  text-decoration: none;
+  width: 6rem;
+  height: 2.2rem;
+  background-color: #7A63FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 10pt;
+  font-family: 'Poppins';
+  padding: 15px;
+  margin-left: 1rem;
+
+  i{
+   font-weight: 600;
+   margin-right:3px;
+  }
+}
+
+// ------------------------------------------------------------------------------------------------------------------
+
+.select{
+  height: 35px;
+  border: 1px solid #E4E4E4;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+
+.h5-2{
+  font-family: 'Poppins';
+  font-size: 1.5rem;
+  font-weight: 500;
+}

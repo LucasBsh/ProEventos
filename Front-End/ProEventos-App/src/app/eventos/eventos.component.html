@@ -1,12 +1,23 @@
-<app-titulo [titulo]="'Eventos'"></app-titulo>
+<app-titulo [titulo]="'Eventos'" [imagem]="'eventsTitle.svg'"></app-titulo>
 
+<div class="eventos-wrapper rounded shadow-sm">
 <div  style="margin-bottom: 5px;">
+
   <div action="" class="form-inline">
+
     <div class="form-group mb-2 flex">
+
       <label style="margin-right:5px;">Filter</label>
       <input type="text" class="form-control mr-2" placeholder="buscar"
-      [(ngModel)]="filtroLista"
-      >
+      [(ngModel)]="filtroLista">
+
+
+        <a class="button rounded shadow-sm" (click)="abrirModalAdd()">
+          <i class="fa fa-plus"></i>
+          Adicionar
+        </a>
+
+
     </div>
   </div >
 </div>
@@ -44,8 +55,13 @@
   </tfoot>
 </table> -->
 <!-- <div class="row row-cols-1 row-cols-md-4 g-4"  (click)="openModal(template)"> -->
-  <div class="row row-cols-1 row-cols-md-4 g-4"  (click)="abrirModalCard()">
-  <div class="col" *ngFor="let evento of eventosFiltrados">
+<div *ngIf="abrirCard" class="fixed">
+  <div class="fixedtwo">
+    <app-modal [detalhesEvento]='detalheEvento' [evento]='eventoClicado' (estadoModal)="fecharModalCard($event)"></app-modal>
+  </div>
+</div>
+<div class="row row-cols-1 row-cols-md-4 g-4 mt-1" >
+  <div class="col" *ngFor="let evento of eventosFiltrados" (click)="abrirModalCard(evento)" >
     <div class="card h-100 shadow2">
       <div class="teste">
         <img class="cardimage" src="/assets/images/eventos/{{evento.imagemURL}}"   alt="...">
@@ -71,8 +87,9 @@
     </div>
   </div>
 </div>
+</div>
 
-<div *ngIf="abrirCard" class="modalbackground">
+<!-- <div *ngIf="abrirCard" class="modalbackground">
   <div class="modalcontent">
     <div class="imagemModal">
         <i class="fa fa-close closemodal" (click)="fecharModalCard()"></i>
@@ -82,12 +99,14 @@
       <h5>Deletar evento</h5>
     </div>
   </div>
-</div>
+</div> -->
+
+
 
 <ng-template #template>
   <div class="modal-body text-center">
     <p>Do you want to confirm?</p>
-    <button type="button" class="btn btn-default" (click)="confirm();fecharModalCard()" >Yes</button>
+    <!-- <button type="button" class="btn btn-default" (click)="confirm();fecharModalCard()" >Yes</button> -->
     <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
   </div>
 </ng-template>

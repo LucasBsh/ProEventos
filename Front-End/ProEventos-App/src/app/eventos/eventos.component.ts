@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, TemplateRef } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { Evento } from '../models/Evento';
@@ -12,11 +12,15 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./eventos.component.scss']
 })
 export class EventosComponent implements OnInit {
+  public eventosClicado?: Evento;
 
   public eventos: Evento[] =[];
   public eventosFiltrados:Evento[] =[];
   public abrirCard: boolean = false;
   private _filtroLista: string = '';
+  public eventoClicado?:Evento;
+  public fixed: string = '';
+  public detalheEvento: boolean = false;
 
   modalRef?: BsModalRef;
   message?: string;
@@ -80,14 +84,28 @@ export class EventosComponent implements OnInit {
 
   }
 
-  abrirModalCard(): void{
+  abrirModalCard(evento: Evento): void{
+    this.eventoClicado = evento;
     this.abrirCard = true;
-  }
-
-  fecharModalCard(): void{
-    this.abrirCard = false;
-    console.log("fechar modal");
+    this.fixed = 'fixed'
+    this.detalheEvento = true;
+    console.log(this.detalheEvento);
 
   }
 
+  fecharModalCard(_abrirCard:boolean): void{
+    // if(_abrirCard == undefined)
+    // this.abrirCard = false;
+    // else
+    this.abrirCard = _abrirCard;
+
+  }
+
+  abrirModalAdd(){
+    this.abrirCard = true;
+    this.fixed = 'fixed'
+    this.detalheEvento = false;
+    console.log(this.detalheEvento);
+
+  }
 }
