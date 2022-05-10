@@ -12,6 +12,9 @@ export class NavComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.showMenu();
+    this.showMenuRegistration();
+
   }
   showMenu() : boolean{
     return this.router.url != '/user/login';

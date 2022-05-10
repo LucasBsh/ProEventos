@@ -79,7 +79,7 @@ p{
   text-decoration: none;
   width: 12rem;
   height: 2.2rem;
-  background-color: #51a351d2;
+  background-color: #5ec45ed2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -213,7 +213,7 @@ h3,p{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .input-flex{
@@ -234,4 +234,24 @@ h3,p{
   font-size: 25pt;
   margin: 1rem;
 
+}
+
+.invalido{
+  text-decoration: none;
+  width: 12rem;
+  height: 2.2rem;
+  background-color: #9ed19ed2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 10pt;
+  font-family: 'Poppins';
+  padding: 15px;
+  border: none;
+
+  i{
+    font-weight: 600;
+    margin-right:5px;
+  }
 }

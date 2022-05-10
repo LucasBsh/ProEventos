@@ -56,48 +56,103 @@
       </div>
     </div>
   </div>
+
+
+
   <div class="modalcontent2" *ngIf="!detalhesEvento">
     <i class="fa fa-close closemodal" style="color: black;" (click)="fecharModalCard()"></i>
     <h1 class="titulo">Adicionar Evento</h1>
-    <form>
+    <form [formGroup]="form">
       <div class="p-3">
+        <!-- <p>Form value:{{form.value | json}}</p>
+        <p>Form status:{{form.status | json}}</p> -->
+
         <div class="form-row">
           <div class="form-group col-md-12">
             <label>Tema</label>
-            <input type="text" class="form-control" placeholder="Insira o Tema">
+            <input [ngClass]="{'is-invalid': f.tema?.errors && f.tema?.touched }" type="text" class="form-control"
+              formControlName="tema" placeholder="Insira o Tema">
+
+            <div *ngIf="form.get('tema')?.hasError('required')" class="invalid-feedback">
+              Tema é obrigatório!
+            </div>
+            <div *ngIf="form.get('tema')?.hasError('minlength')" class="invalid-feedback">
+              Tema deve ter no mínimo 4 caracteres.
+            </div>
+            <div *ngIf="form.get('tema')?.hasError('maxlength')" class="invalid-feedback">
+              Tema deve ter no máximo 50 caracteres.
+            </div>
           </div>
         </div>
         <div class="form-row d-flex5">
-          <div class="input-flex "  style="margin-right: 1rem;">
+          <div class="input-flex " style="margin-right: 1rem;">
             <label>Local</label>
-            <input type="text" class="form-control" placeholder="">
+            <input type="text" class="form-control" [ngClass]="{'is-invalid': f.local?.errors && f.local?.touched }"
+              formControlName="local" placeholder="">
+            <div class="invalid-feedback">
+              Local é obrigatório!
+            </div>
           </div>
-          <div class="input-flex " >
+          <div class="input-flex ">
             <label>Data e Hora</label>
-            <input type="datetime" class="form-control" placeholder="">
+            <input type="datetime" class="form-control"
+              [ngClass]="{'is-invalid': f.dataEvento?.errors && f.dataEvento?.touched }" formControlName="dataEvento"
+              placeholder="">
+            <div class="invalid-feedback">
+              Data e hora são obrigatórios!
+            </div>
           </div>
-          <div class="form-group col-md-2" style="margin-left: 1rem;">
-            <label>Qtd Pessoas</label>
-            <input type="text" class="form-control " placeholder="">
-          </div>
+
         </div>
         <div class="form-row d-flex5">
           <div class="input-flex" style="margin-right: 1rem;">
             <label>Telefone</label>
-            <input type="text" class="form-control" placeholder="(000) 90000-0000">
+            <input type="text" class="form-control"
+              [ngClass]="{'is-invalid': f.telefone?.errors && f.telefone?.touched }" formControlName="telefone"
+              placeholder="(000) 90000-0000">
+            <div class="invalid-feedback">
+              Telefone é obrigatório!
+            </div>
           </div>
           <div class="input-flex">
             <label>Email</label>
-            <input type="text" class="form-control" placeholder="e-mail">
+            <input type="text" class="form-control" [ngClass]="{'is-invalid': f.email?.errors && f.email?.touched }"
+              formControlName="email" placeholder="e-mail">
+            <div class="invalid-feedback">
+              Email é obrigatório!
+            </div>
+          </div>
+        </div>
+        <div class="d-flex5">
+
+          <div class="form-group col-md-3" style="margin-right: 1rem;">
+            <label>Qtd Pessoas</label>
+            <input type="text" class="form-control "
+              [ngClass]="{'is-invalid': f.qtdPessoas?.errors && f.qtdPessoas?.touched }" formControlName="qtdPessoas"
+              placeholder="">
+            <div class="invalid-feedback">
+              Quantidade de pessoas é obrigatório!
+            </div>
+          </div>
+
+          <div class="input-flex">
+            <label>Imagem</label>
+            <input type="text" class="form-control"
+              [ngClass]="{'is-invalid': f.imagemURL?.errors && f.imagemURL?.touched }" formControlName="imagemURL"
+              placeholder="imagem">
+            <div class="invalid-feedback">
+              Image é obrigatório!
+            </div>
           </div>
         </div>
       </div>
       <div class="card-footer2">
         <div class="buttons">
-          <button class="button-danger rounded "  (click)="fecharModalCard()" >
+          <button class="button-danger rounded " (click)="fecharModalCard(); resetForm();">
             Cancelar Alteração
           </button>
-          <button class="button-success rounded " style="margin-left: 1rem;">
+          <button class="rounded" style="margin-left: 1rem;" [disabled]="!form.valid"
+            [ngClass]="{'button-success': form.valid, 'invalido': !form.valid}">
             <span class="spinner-border spinner-border-sm mr-1"></span>
             Salvar Evento
           </button>
@@ -106,5 +161,3 @@
     </form>
   </div>
 </div>
-
-

@@ -86,6 +86,11 @@ input:focus,select:focus{
 
 }
 
+.input-invalid{
+  border: 1px solid red;
+
+}
+
 .label{
   font-family: 'Poppins';
   font-style: normal;
@@ -167,6 +172,27 @@ input:focus,select:focus{
   }
 }
 
+.invalido{
+  text-decoration: none;
+  width: 12rem;
+  height: 2.2rem;
+  background-color: #9ed19ed2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 10pt;
+  font-family: 'Poppins';
+  padding: 15px;
+  border: none;
+
+  i{
+    font-weight: 600;
+    margin-right:5px;
+  }
+}
+
+
 // ------------------------------------------------------------------------------------------------------------------
 
 .select{
@@ -182,4 +208,9 @@ input:focus,select:focus{
   font-family: 'Poppins';
   font-size: 1.5rem;
   font-weight: 500;
+}
+
+.invalid-feedback-registration{
+  font-size: 0.5rem;
+
 }
